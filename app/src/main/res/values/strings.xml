@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">深色模式演示</string>
+    <string name="welcome_title">欢迎使用深色模式演示</string>
+    <string name="welcome_description">这是一个展示Android深色模式的示例应用。您可以使用下面的按钮切换主题。</string>
+    <string name="current_theme">当前主题：</string>
+    <string name="light_mode">浅色模式</string>
+    <string name="dark_mode">深色模式</string>
+    <string name="system_default">跟随系统</string>
+    <string name="theme_info">主题信息</string>
+    <string name="theme_description">应用会根据您的选择自动切换主题颜色、文本颜色和背景颜色。</string>
+    <string name="feature_title">功能特点：</string>
+    <string name="feature_1">• 支持浅色/深色主题切换</string>
+    <string name="feature_2">• 支持跟随系统主题</string>
+    <string name="feature_3">• 使用ViewBinding</string>
+    <string name="feature_4">• Material Design设计</string>
+</resources>
