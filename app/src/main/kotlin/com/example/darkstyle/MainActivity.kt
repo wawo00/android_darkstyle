@@ -2,7 +2,9 @@ package com.example.darkstyle
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.res.Configuration
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.darkstyle.databinding.ActivityMainBinding
@@ -33,10 +35,13 @@ class MainActivity : AppCompatActivity() {
         const val THEME_LIGHT = 0
         const val THEME_DARK = 1
         const val THEME_SYSTEM = 2
+
+        private const val TAG="darkmode"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i(TAG, "onCreate: ")
         
         // 初始化ViewBinding
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -53,6 +58,11 @@ class MainActivity : AppCompatActivity() {
         
         // 设置按钮点击监听器
         setupButtonListeners()
+    }
+
+    override fun recreate() {
+        super.recreate()
+        Log.i(TAG, "recreate: ")
     }
 
     /**
@@ -82,7 +92,8 @@ class MainActivity : AppCompatActivity() {
   fun setCustomTheme(themeMode: Int) {
         // 保存主题设置到SharedPreferences
         sharedPreferences.edit().putInt(KEY_THEME_MODE, themeMode).apply()
-        
+        // 调试：检查是否真的设置成功
+
         // 根据选择的模式设置应用主题
         when (themeMode) {
             THEME_LIGHT -> {
@@ -98,7 +109,10 @@ class MainActivity : AppCompatActivity() {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
             }
         }
-        
+        Log.d("DarkMode", "当前 Night Mode: ${AppCompatDelegate.getDefaultNightMode()}")
+        Log.d("DarkMode", "UI Mode: ${resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK}")
+
+
         // 更新当前主题显示文本
         updateCurrentThemeText()
     }
@@ -139,5 +153,10 @@ class MainActivity : AppCompatActivity() {
             THEME_SYSTEM -> getString(R.string.system_default)
             else -> getString(R.string.system_default)
         }
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        Log.i(TAG, "onConfigurationChanged: ")
     }
 }

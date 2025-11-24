@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- 浅色主题颜色 -->
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    
-    <!-- 自定义颜色 -->
-    <color name="light_background">#FFFFFFFF</color>
-    <color name="light_surface">#FFF5F5F5</color>
-    <color name="light_text">#FF000000</color>
-    <color name="light_text_secondary">#FF666666</color>
+    <color name="gray_200">#FFEEEEEE</color>
+    <color name="gray_500">#FF9E9E9E</color>
+    <color name="colorPrimary">#4E94F6</color>
+    <color name="colorPrimaryDark">#4E94F6</color>
+    <color name="colorAccent">#0080F0</color>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSurface"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <!-- 顶部标题栏 -->
@@ -12,10 +12,10 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="@color/black"
         android:elevation="4dp"
         app:title="@string/app_name"
-        app:titleTextColor="?attr/colorOnPrimary"
+        app:titleTextColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -43,7 +43,7 @@
                 android:text="@string/welcome_title"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:textColor="?attr/colorOnSurface"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:layout_marginBottom="16dp" />
 
@@ -54,19 +54,19 @@
                 android:layout_height="wrap_content"
                 android:text="@string/welcome_description"
                 android:textSize="16sp"
-                android:textColor="?attr/colorOnSurface"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:layout_marginBottom="32dp"
                 android:alpha="0.7" />
 
             <!-- 当前主题信息卡片 -->
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 app:cardElevation="4dp"
                 app:cardCornerRadius="12dp"
-                app:cardBackgroundColor="?attr/colorSurface">
+                app:cardBackgroundColor="@color/gray_500">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                         android:text="@string/current_theme"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textColor="?attr/colorOnSurface"
+                        android:textColor="@color/black"
                         android:layout_marginBottom="8dp" />
 
                     <TextView
@@ -90,10 +90,10 @@
                         android:layout_height="wrap_content"
                         android:text="@string/system_default"
                         android:textSize="20sp"
-                        android:textColor="?attr/colorPrimary"
+                        android:textColor="@android:color/holo_red_light"
                         android:textStyle="bold" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
             <!-- 主题切换按钮 -->
             <TextView
@@ -102,11 +102,11 @@
                 android:text="选择主题："
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="?attr/colorOnSurface"
+                android:textColor="@color/black"
                 android:layout_marginBottom="16dp" />
 
             <!-- 浅色模式按钮 -->
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/btnLightMode"
                 android:layout_width="match_parent"
                 android:layout_height="64dp"
@@ -118,7 +118,7 @@
                 app:cornerRadius="12dp" />
 
             <!-- 深色模式按钮 -->
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/btnDarkMode"
                 android:layout_width="match_parent"
                 android:layout_height="64dp"
@@ -130,7 +130,7 @@
                 app:cornerRadius="12dp" />
 
             <!-- 跟随系统按钮 -->
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/btnSystemDefault"
                 android:layout_width="match_parent"
                 android:layout_height="64dp"
@@ -142,12 +142,12 @@
                 app:cornerRadius="12dp" />
 
             <!-- 功能特点卡片 -->
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardElevation="4dp"
                 app:cardCornerRadius="12dp"
-                app:cardBackgroundColor="?attr/colorSurface">
+                app:cardBackgroundColor="@color/gray_500">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -162,7 +162,7 @@
                         android:text="@string/theme_info"
                         android:textSize="18sp"
                         android:textStyle="bold"
-                        android:textColor="?attr/colorOnSurface"
+                        android:textColor="@color/black"
                         android:layout_marginBottom="8dp" />
 
                     <TextView
@@ -171,7 +171,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/theme_description"
                         android:textSize="14sp"
-                        android:textColor="?attr/colorOnSurface"
+                        android:textColor="@color/black"
                         android:alpha="0.7"
                         android:layout_marginBottom="16dp" />
 
@@ -182,7 +182,7 @@
                         android:text="@string/feature_title"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textColor="?attr/colorOnSurface"
+                        android:textColor="@color/black"
                         android:layout_marginBottom="8dp" />
 
                     <TextView
@@ -191,7 +191,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/feature_1"
                         android:textSize="14sp"
-                        android:textColor="?attr/colorOnSurface"
+                        android:textColor="@color/black"
                         android:alpha="0.7"
                         android:layout_marginBottom="4dp" />
 
@@ -201,7 +201,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/feature_2"
                         android:textSize="14sp"
-                        android:textColor="?attr/colorOnSurface"
+                        android:textColor="@color/black"
                         android:alpha="0.7"
                         android:layout_marginBottom="4dp" />
 
@@ -211,7 +211,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/feature_3"
                         android:textSize="14sp"
-                        android:textColor="?attr/colorOnSurface"
+                        android:textColor="@color/black"
                         android:alpha="0.7"
                         android:layout_marginBottom="4dp" />
 
@@ -221,10 +221,10 @@
                         android:layout_height="wrap_content"
                         android:text="@string/feature_4"
                         android:textSize="14sp"
-                        android:textColor="?attr/colorOnSurface"
+                        android:textColor="@color/black"
                         android:alpha="0.7" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
     </ScrollView>
