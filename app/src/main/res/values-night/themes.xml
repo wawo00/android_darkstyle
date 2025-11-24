@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+2<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme (Dark) -->
     <style name="Base.Theme.DarkStyle" parent="Theme.Material3.Dark.NoActionBar">

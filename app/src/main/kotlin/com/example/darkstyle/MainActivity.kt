@@ -61,17 +61,17 @@ class MainActivity : AppCompatActivity() {
     private fun setupButtonListeners() {
         // 浅色模式按钮
         binding.btnLightMode.setOnClickListener {
-            setTheme(THEME_LIGHT)
+            setCustomTheme(THEME_LIGHT)
         }
         
         // 深色模式按钮
         binding.btnDarkMode.setOnClickListener {
-            setTheme(THEME_DARK)
+            setCustomTheme(THEME_DARK)
         }
         
         // 跟随系统按钮
         binding.btnSystemDefault.setOnClickListener {
-            setTheme(THEME_SYSTEM)
+            setCustomTheme(THEME_SYSTEM)
         }
     }
 
@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
      * 设置主题
      * @param themeMode 主题模式：THEME_LIGHT（浅色）、THEME_DARK（深色）、THEME_SYSTEM（跟随系统）
      */
-    private fun setTheme(themeMode: Int) {
+  fun setCustomTheme(themeMode: Int) {
         // 保存主题设置到SharedPreferences
         sharedPreferences.edit().putInt(KEY_THEME_MODE, themeMode).apply()
         

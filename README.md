@@ -180,3 +180,50 @@ Android 开发者
 ---
 
 **注意**: 本项目需要互联网连接以下载 Android Gradle Plugin 和其他依赖项。首次构建时，Gradle 会自动从 Google Maven 和 Maven Central 下载所需的依赖。
+
+
+## 实现原理
+
+Android Dark Mode 基于**资源限定符(Resource Qualifiers)**机制实现:
+
+1. **配置限定符**: 使用 `-night` 后缀标识夜间模式资源
+2. **系统自动切换**: 根据系统主题设置或应用配置,自动加载对应资源
+3. **主题继承**: 通过 `parent` 属性继承 Material Design 的深色主题
+
+### 实现方式
+
+#### 1. **资源文件组织**
+```
+res/
+├── values/
+│   ├── themes.xml      # 浅色主题
+│   └── colors.xml      # 浅色颜色
+└── values-night/
+    ├── themes.xml      # 深色主题(当前文件)
+    └── colors.xml      # 深色颜色
+```
+
+#### 2. **主题配置关键点**
+
+- **父主题**: `Theme.Material3.Dark.NoActionBar` 提供深色基础样式
+- **颜色定义**:
+    - `colorPrimary/colorSecondary` - 主要/次要色调
+    - `colorBackground/colorSurface` - 背景和表面颜色
+    - `colorOnPrimary/colorOnSurface` - 文字颜色
+- **状态栏**: 通过 `android:statusBarColor` 和 `windowLightStatusBar` 适配
+
+#### 3. **代码控制(可选)**
+
+```kotlin
+// 在 Activity 或 Application 中设置
+AppCompatDelegate.setDefaultNightMode(
+    AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM  // 跟随系统
+    // AppCompatDelegate.MODE_NIGHT_YES         // 强制深色
+    // AppCompatDelegate.MODE_NIGHT_NO          // 强制浅色
+)
+```
+
+#### 4. **优势**
+- 零代码适配,系统自动切换
+- 统一管理颜色和样式
+- 符合 Material Design 规范
